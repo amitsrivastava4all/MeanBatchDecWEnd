@@ -1,0 +1,181 @@
+var a;
+undefined
+typeof(a);
+"undefined"
+a=100;
+100
+typeof(a);
+"number"
+a=1;
+1
+typeof(a);
+"number"
+a=10000000;
+10000000
+typeof(a);
+"number"
+a=100.20;
+100.2
+typeof(a);
+"number"
+a=100/0;
+Infinity
+typeof(a);
+"number"
+a=100/"hello";
+NaN
+typeof(a);
+"number"
+isNaN(a);
+true
+isNaN(a)?0:a;
+0
+a;
+NaN
+a=100;
+100
+a;
+100
+a=100/0;
+Infinity
+isFinite(a);
+false
+isFinite(a)?a:0;
+0
+a;
+Infinity
+a=100;
+100
+a;
+100
+isFinite(a)?a:0;
+100
+var a= 100;
+undefined
+var b = "200";
+undefined
+typeof(a);
+"number"
+typeof(b);
+"string"
+a + b;
+"100200"
+a-b;
+-100
+"Amit"+"Srivastava";
+"AmitSrivastava"
+"Amit"-"Srivastava";
+NaN
+a;
+100
+b;
+"200"
+a-b;
+-100
+a*b;
+20000
+a/b;
+0.5
+2**3
+8
+a+b;
+"100200"
+a+parseInt(b);
+300
+a="Amit";
+"Amit"
+typeof(a);
+"string"
+a=100;
+100
+typeof(a);
+"number"
+a="Amit";
+"Amit"
+a='Amit';
+"Amit"
+typeof(a);
+"string"
+a='A';
+"A"
+typeof(a);
+"string"
+a=`hgddjkhgjkdfhjkghkfjhgkjhfkdjjhfdkjgkjfd
+,mfkjdhjgfkdfgkjfhkgjhfd
+gdfkjghdfjkgjkdfhgkjdf
+gfjgjkdfh`;
+"hgddjkhgjkdfhjkghkfjhgkjhfkdjjhfdkjgkjfd
+,mfkjdhjgfkdfgkjfhkgjhfd
+gdfkjghdfjkgjkdfhgkjdf
+gfjgjkdfh"
+a;
+"hgddjkhgjkdfhjkghkfjhgkjhfkdjjhfdkjgkjfd
+,mfkjdhjgfkdfgkjfhkgjhfd
+gdfkjghdfjkgjkdfhgkjdf
+gfjgjkdfh"
+typeof(a);
+"string"
+a= "hgjkdhjghdfjkgjkdg\nhmdbnmgbdfmn\nbsfjbg";
+"hgjkdhjghdfjkgjkdg
+hmdbnmgbdfmn
+bsfjbg"
+a=100;
+100
+b = 200;
+200
+console.log("A is "+a+" and B is "+b);
+VM1737:1 A is 100 and B is 200
+undefined
+console.log(`A is ${a} and B is ${b}`);
+VM1838:1 A is 100 and B is 200
+undefined
+var t = true;
+undefined
+typeof(t);
+"boolean"
+true + true;
+2
+var a ;
+undefined
+typeof(a);
+"number"
+var aa ;
+undefined
+typeof(aa);
+"undefined"
+function add(x,y){
+return x + y;
+}
+undefined
+typeof(add);
+"function"
+add(100,200);
+300
+add();
+NaN
+add(100);
+NaN
+100 + undefined;
+NaN
+function add(x,y){
+x = x || 0;
+y = y || 0;
+return x + y;
+}
+undefined
+add();
+0
+add(10);
+10
+add(10,20);
+30
+function add(x=0,y=0){
+//x = x || 0;
+//y = y || 0;
+return x + y;
+}
+undefined
+add(10,20);
+30
+add();
+0
