@@ -1,0 +1,203 @@
+var obj = {};
+undefined
+typeof(obj);
+"object"
+object instanceof Object;
+VM602:1 Uncaught ReferenceError: object is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM602:1
+obj instanceof Object;
+true
+typeof(Object);
+"function"
+obj.id=1001;
+1001
+obj.name= "Amit";
+"Amit"
+obj;
+{id: 1001, name: "Amit"}
+var obj2 = {id:1002,name:'Ram',salary:9999};
+undefined
+typeof(obj);
+"object"
+typeof(obj2);
+"object"
+obj instanceof Object;
+true
+obj2 instanceof Object;
+true
+obj;
+{id: 1001, name: "Amit"}
+obj2;
+{id: 1002, name: "Ram", salary: 9999}
+delete obj.id;
+true
+obj;
+{name: "Amit"}
+var math= {
+sin(){
+console.log("sin");
+}
+, cos(){
+},
+tan(){
+}
+}
+undefined
+typeof(math);
+"object"
+math instanceof Object;
+true
+math.sin();
+VM2170:3 sin
+undefined
+var math = {
+sin:function(){
+console.log("Sin ");
+}
+}
+undefined
+var a = [10,20,30,90.20, true, false, "Hello",[100,200], function(){
+console.log("I am Function ");
+}];
+undefined
+typeof(a)
+"object"
+a instanceof Array;
+true
+typeof(Array);
+"function"
+a instanceof Object;
+true
+a[0];
+10
+a[7];
+(2) [100, 200]
+a[7][0];
+
+100
+a[8];
+ƒ (){
+console.log("I am Function ");
+}
+a[8]();
+VM2856:2 I am Function 
+undefined
+function test(){
+console.log("I am Test ");
+}
+undefined
+test();
+VM3283:2 I am Test 
+undefined
+var m = test();
+VM3283:2 I am Test 
+undefined
+m;
+undefined
+function test(){
+console.log("I am Test ");
+return 10;
+}
+undefined
+test();
+VM3388:2 I am Test 
+10
+var m = test();
+VM3388:2 I am Test 
+undefined
+m;
+10
+function add(){
+console.log(" i am add ");
+}
+undefined
+typeof(add);
+"function"
+add();
+VM3650:2  i am add 
+undefined
+add(10,20);
+VM3650:2  i am add 
+undefined
+add([10,20]);
+VM3650:2  i am add 
+undefined
+add("Hello");
+VM3650:2  i am add 
+undefined
+add(true, false);
+VM3650:2  i am add 
+undefined
+add([10,20],true, 10,"10");
+VM3650:2  i am add 
+undefined
+add;
+ƒ add(){
+console.log(" i am add ");
+}
+console.dir(add);
+VM4782:1 ƒ add()arguments: nullcaller: nulllength: 0name: "add"prototype: {constructor: ƒ}__proto__: ƒ ()[[FunctionLocation]]: VM3650:1[[Scopes]]: Scopes[1]
+undefined
+function add(){
+console.log(" i am add ",arguments.length);
+}
+undefined
+add();
+VM5557:2  i am add  0
+undefined
+add(10,20);
+VM5557:2  i am add  2
+undefined
+add(10,20,30,40,50);
+VM5557:2  i am add  5
+undefined
+function add(){
+//console.log(" i am add ",arguments.length);
+var sum = 0;
+for(let i = 0; i<arguments.length; i++){
+sum+=arguments[i];
+}
+return sum;
+}
+undefined
+add();
+0
+add(10,20);
+30
+add(10,20,30,40,50);
+150
+add(10,"10",20);
+"101020"
+function add(){
+//console.log(" i am add ",arguments.length);
+var sum = 0;
+for(let i = 0; i<arguments.length; i++){
+sum+=parseInt(arguments[i]);
+}
+return sum;
+}
+undefined
+sum(10,"10",20);
+VM6263:1 Uncaught ReferenceError: sum is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM6263:1
+add(10,"10",20);
+40
+add("ten",10,"10");
+NaN
+parseInt("ten");
+NaN
+NaN+10
+NaN
+function add(){
+//console.log(" i am add ",arguments.length);
+var sum = 0;
+for(let i = 0; i<arguments.length; i++){
+sum+=isNaN(parseInt(arguments[i]))?0:parseInt(arguments[i]);
+}
+return sum;
+}
+undefined
+add("ten",10,20,"30");
+60
