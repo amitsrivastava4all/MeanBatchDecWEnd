@@ -1,0 +1,360 @@
+function add(){
+console.log("This is add ");
+}
+undefined
+typeof(add);
+"function"
+add();
+VM248:2 This is add 
+undefined
+add(10,20);
+VM248:2 This is add 
+undefined
+console.dir(add);
+VM342:1 ƒ add()arguments: nullcaller: nulllength: 0name: "add"prototype: {constructor: ƒ}__proto__: ƒ ()[[FunctionLocation]]: VM248:1[[Scopes]]: Scopes[1]
+undefined
+function add(){
+console.log("This is add ",arguments.length);
+}
+undefined
+add();
+VM438:2 This is add  0
+undefined
+add(10,20);
+VM438:2 This is add  2
+undefined
+add("Hello");
+VM438:2 This is add  1
+undefined
+add("Hello",20,true,[10,20]);
+VM438:2 This is add  4
+undefined
+function add(){
+for(let i=0; i<arguments.length; i++){
+console.log("Args ",arguments[i]);
+}
+console.log("This is add ",arguments.length);
+}
+undefined
+add();
+VM738:5 This is add  0
+undefined
+add(10,20);
+VM738:3 Args  10
+VM738:3 Args  20
+VM738:5 This is add  2
+undefined
+add(10,20,"Amit");
+VM738:3 Args  10
+VM738:3 Args  20
+VM738:3 Args  Amit
+VM738:5 This is add  3
+undefined
+function add(){
+var sum = 0;
+for(let i=0; i<arguments.length; i++){
+sum+=arguments[i];
+//console.log("Args ",arguments[i]);
+}
+console.log("This is add ",sum);
+}
+undefined
+add();
+VM906:7 This is add  0
+undefined
+add(10,20);
+VM906:7 This is add  30
+undefined
+window;
+Window {postMessage: ƒ, blur: ƒ, focus: ƒ, close: ƒ, parent: Window, …}
+typeof(window);
+"object"
+window instanceof Window;
+true
+typeof(Window);
+"function"
+add;
+ƒ add(){
+var sum = 0;
+for(let i=0; i<arguments.length; i++){
+sum+=arguments[i];
+//console.log("Args ",arguments[i]);
+}
+console.log("This is add ",sum);
+}
+add();
+VM906:7 This is add  0
+undefined
+window.add();
+VM906:7 This is add  0
+undefined
+function add(){
+console.log("Add this is ",this);
+var sum = 0;
+for(let i=0; i<arguments.length; i++){
+sum+=arguments[i];
+//console.log("Args ",arguments[i]);
+}
+console.log("This is add ",sum);
+}
+undefined
+window;
+Window {postMessage: ƒ, blur: ƒ, focus: ƒ, close: ƒ, parent: Window, …}
+this;
+Window {postMessage: ƒ, blur: ƒ, focus: ƒ, close: ƒ, parent: Window, …}
+window == this;
+true
+add(); // window.add();
+VM1631:2 Add this is  Window {postMessage: ƒ, blur: ƒ, focus: ƒ, close: ƒ, parent: Window, …}
+VM1631:8 This is add  0
+undefined
+console.dir(add);
+VM1884:1 ƒ add()arguments: nullcaller: nulllength: 0name: "add"prototype: {constructor: ƒ}__proto__: ƒ ()apply: ƒ apply()arguments: (...)bind: ƒ bind()call: ƒ call()caller: (...)constructor: ƒ Function()length: 0name: ""toString: ƒ toString()Symbol(Symbol.hasInstance): ƒ [Symbol.hasInstance]()get arguments: ƒ ()set arguments: ƒ ()get caller: ƒ ()set caller: ƒ ()__proto__: Object[[FunctionLocation]]: <unknown>[[Scopes]]: Scopes[0][[FunctionLocation]]: VM1631:1[[Scopes]]: Scopes[1]
+undefined
+var e = function(){
+console.log("I am function expression ");
+}
+undefined
+typeof(e);
+"function"
+e();
+VM3152:2 I am function expression 
+undefined
+function User(){
+var add=function(){
+console.log("User add ");
+}
+return add;
+}
+undefined
+function User(){
+console.log("User Call ");
+var add=function(){
+console.log("User add ");
+}
+return add;
+}
+undefined
+var m = User();
+VM4081:2 User Call 
+undefined
+m;
+ƒ (){
+console.log("User add ");
+}
+m();
+VM4081:4 User add 
+undefined
+typeof(m);
+"function"
+function test(){
+return 1000;
+}
+undefined
+test();
+1000
+function test(){
+console.log("Test");
+//return 1000;
+}
+undefined
+test();
+VM4326:2 Test
+undefined
+console.log("Hello");
+VM4380:1 Hello
+undefined
+function User(){
+console.log("User Call ");
+var add=function(){
+console.log("User add ");
+}
+var del = function(){
+console.log("User Del");
+}
+return [add,del];
+}
+undefined
+var m= User();
+VM4508:2 User Call 
+undefined
+m;
+(2) [ƒ, ƒ]0: ƒ ()1: ƒ ()length: 2__proto__: Array(0)
+m[0]();
+VM4508:4 User add 
+undefined
+User()[0]();
+VM4508:2 User Call 
+VM4508:4 User add 
+undefined
+function User(){
+console.log("User Call ");
+var add=function add(){
+console.log("User add ");
+}
+var del = function del(){
+console.log("User Del");
+}
+return [add,del];
+}
+undefined
+var t = User();
+VM4845:2 User Call 
+undefined
+t;
+(2) [ƒ, ƒ]0: ƒ add()1: ƒ del()length: 2__proto__: Array(0)
+t[0]();
+VM4845:4 User add 
+undefined
+function User(){
+console.log("User Call ");
+var add=function (){
+console.log("User add ");
+}
+var del = function (){
+console.log("User Del");
+}
+return {"addUser":add,"delUser":del};
+}
+undefined
+var g = User();
+VM5118:2 User Call 
+undefined
+g;
+{addUser: ƒ, delUser: ƒ}
+g.addUser();
+VM5118:4 User add 
+undefined
+function User(){
+console.log("User Call ");
+var add=function (){
+console.log("User add ");
+}
+var del = function (){
+console.log("User Del");
+}
+return {1:add,2:del};
+}
+undefined
+var m = User();
+VM5388:2 User Call 
+undefined
+m;
+{1: ƒ, 2: ƒ}
+m.1;
+VM5445:1 Uncaught SyntaxError: Unexpected number
+m[1]
+ƒ (){
+console.log("User add ");
+}
+m[1]();
+VM5388:4 User add 
+undefined
+var add=(a,b)=>a+b;
+undefined
+typeof(add);
+"function"
+add(10,20);
+30
+add(10);
+NaN
+10 + undefined;
+NaN
+undefined +undefined;
+NaN
+add();
+NaN
+var add=(a=0,b=0)=>a+b;
+undefined
+add();
+0
+add(10);
+10
+a=undefined;
+undefined
+typeof(a);
+"undefined"
+typeof(a)==="undefined"?"Value is Missing":a;
+"Value is Missing"
+a=100;
+100
+typeof(a)==="undefined"?"Value is Missing":a;
+100
+a=0;
+0
+a==0?"Value is Missing ":a;
+"Value is Missing "
+a=10;
+10
+a==0?"Value is Missing ":a;
+10
+a="";
+""
+a==""?"Value is Missing ":a;
+"Value is Missing "
+a=null;
+null
+a==null?"Value is Missing ":a;
+"Value is Missing "
+a;
+null
+a?a:"Not ";
+"Not "
+a;
+null
+a={};
+{}
+a;
+{}
+a?a:"Not ";
+{}
+a=undefined;
+undefined
+a?a:"Not ";
+"Not "
+window.open("http://www.flipkart.com");
+Window {postMessage: ƒ, blur: ƒ, focus: ƒ, close: ƒ, parent: Window, …}
+var add=(a,b)=>{
+a = a || 0;
+b = b || 0;
+return a+b;
+}
+undefined
+add();
+0
+add(10);
+10
+add(10,20);
+30
+add;
+(a,b)=>{
+a = a || 0;
+b = b || 0;
+return a+b;
+}
+add=100;
+100
+add();
+VM7720:1 Uncaught TypeError: add is not a function
+    at <anonymous>:1:1
+(anonymous) @ VM7720:1
+const add1=(a,b)=>{
+a = a || 0;
+b = b || 0;
+return a+b;
+}
+undefined
+add1=100;
+VM7836:1 Uncaught TypeError: Assignment to constant variable.
+    at <anonymous>:1:5
+(anonymous) @ VM7836:1
+class A{
+}
+undefined
+typeof(A);
+"function"
+class Q{
+}
+class P extends Q{
+}
+undefined
