@@ -1,0 +1,262 @@
+var arr = [10,20,30,"Amit",true,[100,200],function(){
+return 1000;
+}];
+undefined
+typeof(arr);
+"object"
+arr instanceof Array;
+true
+typeof(Array);
+"function"
+var ram = {id:1001, name:'Ram',salary:9999};
+undefined
+typeof(ram);
+"object"
+ram instanceof Object;
+true
+var id =1001;
+undefined
+var name = "Tom";
+undefined
+var obj = {id, name};
+undefined
+obj;
+{id: 1001, name: "Tom"}
+var math = {
+sin:function(){
+},
+cos:function(){
+}
+}
+undefined
+var math2 = {
+sin(){
+},
+cos(){
+}
+}
+undefined
+math;
+{sin: ƒ, cos: ƒ}
+math2;
+{sin: ƒ, cos: ƒ}
+var validation= {
+isBlank(){
+},
+isCorrectEmail(){
+},
+isCorrectPhone(){
+}
+}
+undefined
+var validation= {
+isBlank(){
+console.log("IsBlank");
+},
+isCorrectEmail(){
+console.log("EMAIL");
+},
+isCorrectPhone(){
+console.log("PHONE");
+}
+}
+undefined
+validation.isBlank();
+VM2578:3 IsBlank
+undefined
+validation.isCorrectEmail();
+VM2578:6 EMAIL
+undefined
+function createEmployee(eid , ename, sal){
+var empObject = {};
+empObject.id = eid;
+empObject.name = ename;
+empObject.salary = sal;
+return empObject;
+}
+
+undefined
+typeof(createEmployee);
+"function"
+var ram = createEmployee(1, "Ram Kumar",8999);
+undefined
+typeof(ram);
+"object"
+ram;
+{id: 1, name: "Ram Kumar", salary: 8999}
+var mike  = createEmployee(2, "Mike",3333);
+undefined
+typeof(mike);
+"object"
+mike;
+{id: 2, name: "Mike", salary: 3333}id: 2name: "Mike"salary: 3333__proto__: Object
+function Customer(id , name , balance){
+this.id = id;
+this.name  = name;
+this.balance = balance;
+}
+undefined
+var ram = new Customer(1001,'Ram', 8888);
+undefined
+typeof(ram);
+"object"
+ram instanceof Customer;
+true
+ram;
+Customer {id: 1001, name: "Ram", balance: 8888}
+class Student{
+constructor(id , name, course){
+this.id = id;
+this.name = name;
+this.course = course;
+}
+}
+undefined
+typeof(Student);
+"function"
+var mike = new Student(1001, "Mike", "JS");
+undefined
+mike;
+Student {id: 1001, name: "Mike", course: "JS"}
+mike instanceof Student;
+true
+mike instanceof Object;
+true
+var r1 = new Array();
+undefined
+r1;
+[]
+typeof(r1);
+"object"
+r1 instanceof Array;
+true
+var r1 = new Array(10,20,30);
+undefined
+r1;
+(3) [10, 20, 30]
+var r2 = [90,100,200];
+undefined
+typeof(r2);
+"object"
+r2 instanceof Array;
+true
+var mike = new Student();
+undefined
+mike;
+Student {id: undefined, name: undefined, course: undefined}
+class Student{
+constructor(id=1 , name="", course="JS"){
+this.id = id;
+this.name = name;
+this.course = course;
+}
+}
+VM5236:1 Uncaught SyntaxError: Identifier 'Student' has already been declared
+    at <anonymous>:1:1
+(anonymous) @ VM5236:1
+class ITStudent{
+constructor(id=1 , name="", course="JS"){
+this.id = id;
+this.name = name;
+this.course = course;
+}
+}
+undefined
+var tim = new ITStudent();
+undefined
+tim;
+ITStudent {id: 1, name: "", course: "JS"}
+function MyArray(){
+this.arr = [];
+console.log("Args ",arguments.length);
+
+}
+undefined
+function MyArray(){
+this.arr = [];
+console.log("Args ",arguments.length);
+
+}
+undefined
+var e = new MyArray(10,20,30);
+VM5499:3 Args  3
+undefined
+var args = [10,20,30];
+undefined
+var arr = [...args];
+undefined
+arr;
+(3) [10, 20, 30]
+function MyArray(){
+this.arr = [...arguments];
+
+}
+undefined
+var m1 = new MyArray(1,2,3,4,5);
+undefined
+m1;
+MyArray {arr: Array(5)}arr: (5) [1, 2, 3, 4, 5]__proto__: Object
+function looping(n){
+for(let i = 1;i<=n; i++){
+
+}
+}
+undefined
+function cube(num){
+return num**3;
+}
+undefined
+cube(3);
+27
+function looping(n,fn){
+for(let i = 1;i<=n; i++){
+console.log(fn(i));
+}
+}
+looping(5,cube);
+VM6842:3 1
+VM6842:3 8
+VM6842:3 27
+VM6842:3 64
+VM6842:3 125
+undefined
+looping(5,num=>num**3);
+VM6842:3 1
+VM6842:3 8
+VM6842:3 27
+VM6842:3 64
+VM6842:3 125
+undefined
+looping(5,num=>num%2==0?"Even"+num:"Odd"+num);
+VM6842:3 Odd1
+VM6842:3 Even2
+VM6842:3 Odd3
+VM6842:3 Even4
+VM6842:3 Odd5
+undefined
+var m = [100,20];
+undefined
+m.push(1000);
+3
+m;
+(3) [100, 20, 1000]
+m.pop();
+1000
+m;
+(2) [100, 20]
+var m = [100,20,90,1,5,100,6,100];
+undefined
+m.splice(1);
+(7) [20, 90, 1, 5, 100, 6, 100]
+m;
+[100]
+var m = [100,20,90,1,5,100,6,100];
+undefined
+m.splice(1,1);
+[20]
+m;
+(7) [100, 90, 1, 5, 100, 6, 100]
+m.splice(1,2);
+(2) [90, 1]
+m;
+(5) [100, 5, 100, 6, 100]
