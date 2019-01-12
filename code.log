@@ -1,0 +1,156 @@
+function Employee(id , name , salary){
+	this.id = id;
+	this.name = name;
+	this.salary = salary;
+	this.print=function(){
+	console.log(` Id is ${this.id} Name is ${this.name} and Salary is ${this.salary}`);    
+}
+}
+undefined
+var ram = new Employee(1001, "Ram",9999);
+undefined
+ram;
+Employee {id: 1001, name: "Ram", salary: 9999, print: ƒ}
+var shyam = new Employee(1002, "Shyam",19999);
+undefined
+shyam;
+Employee {id: 1002, name: "Shyam", salary: 19999, print: ƒ}
+shyam.print();
+VM425:6  Id is 1002 Name is Shyam and Salary is 19999
+undefined
+ram.print();
+VM425:6  Id is 1001 Name is Ram and Salary is 9999
+undefined
+Employee.prototype.show=function(){
+console.log(` SHOW ::: Id is ${this.id} Name is ${this.name} and Salary is ${this.salary}`);
+}
+ƒ (){
+console.log(` SHOW ::: Id is ${this.id} Name is ${this.name} and Salary is ${this.salary}`);
+}
+var mike = new Employee(1003,"Mike",8888);
+undefined
+mike;
+Employee {id: 1003, name: "Mike", salary: 8888, print: ƒ}id: 1003name: "Mike"print: ƒ ()salary: 8888__proto__: show: ƒ ()constructor: ƒ Employee(id , name , salary)__proto__: Object
+var tom = new Employee(1004,"TOM",18888);
+undefined
+tom;
+Employee {id: 1004, name: "TOM", salary: 18888, print: ƒ}id: 1004name: "TOM"print: ƒ ()salary: 18888__proto__: show: ƒ ()constructor: ƒ Employee(id , name , salary)__proto__: Object
+tom.show();
+VM1229:2  SHOW ::: Id is 1004 Name is TOM and Salary is 18888
+undefined
+mike.show();
+VM1229:2  SHOW ::: Id is 1003 Name is Mike and Salary is 8888
+undefined
+ram.show();
+VM1229:2  SHOW ::: Id is 1001 Name is Ram and Salary is 9999
+undefined
+Employee;
+ƒ Employee(id , name , salary){
+	this.id = id;
+	this.name = name;
+	this.salary = salary;
+	this.print=function(){
+	console.log(` Id is ${this.id} Name is ${this.name} and Salary is ${this.salary}`);    …
+Employee.test= function(){
+console.log("Test ");
+}
+ƒ (){
+console.log("Test ");
+}
+Employee.test();
+VM1756:2 Test 
+undefined
+typeof(Employee);
+"function"
+Employee;
+ƒ Employee(id , name , salary){
+	this.id = id;
+	this.name = name;
+	this.salary = salary;
+	this.print=function(){
+	console.log(` Id is ${this.id} Name is ${this.name} and Salary is ${this.salary}`);    …
+Employee.prototype;
+{show: ƒ, constructor: ƒ}show: ƒ ()constructor: ƒ Employee(id , name , salary)__proto__: Object
+console.dir(Employee);
+VM1913:1 ƒ Employee(id , name , salary)test: ƒ ()arguments: nullcaller: nulllength: 3name: "Employee"prototype: show: ƒ ()constructor: ƒ Employee(id , name , salary)__proto__: Object__proto__: ƒ ()[[FunctionLocation]]: VM425:1[[Scopes]]: Scopes[1]
+undefined
+class Customer{
+constructor(id , name , balance){
+this.id = id;
+this.name = name;
+this.balance = balance;
+
+}
+show(){
+console.log(` Id is ${this.id} Name is ${this.name} and Balance is ${this.balance}`);
+}
+}
+undefined
+var ram =new Customer(1001, "Ram",9999);
+undefined
+ram;
+Customer {id: 1001, name: "Ram", balance: 9999}balance: 9999id: 1001name: "Ram"__proto__: constructor: class Customershow: ƒ show()__proto__: Object
+Customer.print=function(){
+console.log("I am Print ");
+}
+ƒ (){
+console.log("I am Print ");
+}
+Customer.print();
+VM2420:2 I am Print 
+undefined
+if(10>2){
+Customer.prototype.display=function(){
+console.log("Display ");
+}
+}
+ƒ (){
+console.log("Display ");
+}
+Customer;
+class Customer{
+constructor(id , name , balance){
+this.id = id;
+this.name = name;
+this.balance = balance;
+
+}
+show(){
+console.log(` Id is ${this.id} Name is ${this.name} and Balance is ${this.balance}`);
+}
+}
+ram;
+Customer {id: 1001, name: "Ram", balance: 9999}balance: 9999id: 1001name: "Ram"__proto__: display: ƒ ()constructor: class Customershow: ƒ show()__proto__: Object
+var name = "Amit";
+undefined
+var e = new String("Ram");
+undefined
+typeof(name);
+"string"
+typeof(e);
+"object"
+e instanceof String;
+true
+name instanceof String;
+false
+name.charAt(1);
+"m"
+a = "    Amit     ";
+"    Amit     "
+a.trim();
+"Amit"
+a.ltrim();
+VM3302:1 Uncaught TypeError: a.ltrim is not a function
+    at <anonymous>:1:3
+(anonymous) @ VM3302:1
+String.prototype.ltrim=function(){
+console.log("LTrim ");
+}
+ƒ (){
+console.log("LTrim ");
+}
+a;
+"    Amit     "
+a.ltrim();
+VM3472:2 LTrim 
+undefined
