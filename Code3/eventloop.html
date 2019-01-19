@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function heavy() {
+            setTimeout(() => {
+                console.log("Heavy Start");
+
+                for (let i = 1; i <= 100000; i++) {
+                    for (let j = 1; j <= 100000; j++) {
+
+                    }
+                }
+                return 8888;
+                console.log("Heavy End");
+                document.querySelector("#heavy").innerText = "Heavy Done....";
+            }, 5000)
+
+        }
+        var counter = 1;
+
+        function light() {
+            document.querySelector("#light").innerText = counter;
+            counter++;
+        }
+    </script>
+</head>
+
+<body>
+    <p>Light is <span id="light"></span></p>
+    <button onclick="light()">Light</button>
+    <br>
+    <button onclick="heavy()">Heavy</button>
+    <p>Heavy is <span id="heavy"></span></p>
+</body>
+
+</html>
