@@ -1,0 +1,232 @@
+function heavy(){
+setTimeout(()=>{
+console.log("I will call after 5 sec ");
+return 1000;
+},5000); // timeout close
+} // heavy close
+undefined
+console.log("Before Heavy");
+var t = heavy();
+console.log("After Heavy ",t);
+VM451:1 Before Heavy
+VM451:3 After Heavy  undefined
+undefined
+VM309:3 I will call after 5 sec 
+function heavy(){
+var pr = new Promise((resolve,reject)=>{
+// Async Task
+setTimeout(()=>{
+console.log("I will call after 5 sec ");
+resolve(1000);
+},5000); // timeout close
+
+});
+return pr;
+} // heavy close
+undefined
+var p = heavy();
+undefined
+p;
+Promise {<pending>}
+VM1193:5 I will call after 5 sec 
+var p = heavy();
+for(let i =1;i<=10; i++){
+console.log("I am Doing something else ",i);
+}
+p.then(data=>{
+console.log("Data is ",data*data);
+}).catch(e=>{
+console.log("Error is ",e);
+});
+VM1777:3 I am Doing something else  1
+VM1777:3 I am Doing something else  2
+VM1777:3 I am Doing something else  3
+VM1777:3 I am Doing something else  4
+VM1777:3 I am Doing something else  5
+VM1777:3 I am Doing something else  6
+VM1777:3 I am Doing something else  7
+VM1777:3 I am Doing something else  8
+VM1777:3 I am Doing something else  9
+VM1777:3 I am Doing something else  10
+Promise {<pending>}
+VM1193:5 I will call after 5 sec 
+VM1777:6 Data is  1000000
+function Customer(id , name , balance){
+var obj = {};
+obj.id = id;
+obj.name = name;
+obj.balance = balance;
+return obj;
+}
+undefined
+var ram = Customer(1001, "Ram", 8888);
+undefined
+typeof(ram);
+"object"
+ram;
+{id: 1001, name: "Ram", balance: 8888}
+var r = {};
+undefined
+typeof(r);
+"object"
+r instanceof Object;
+true
+typeof(Object);
+"function"
+r.id = 1001;
+1001
+r;
+{id: 1001}
+r.name ="Ram";
+"Ram"
+r;
+{id: 1001, name: "Ram"}
+r;
+{id: 1001, name: "Ram"}
+ram;
+{id: 1001, name: "Ram", balance: 8888}
+function Employee(id , name ,salary){
+this.id = id;
+this.name =name;
+this.salary = salary;
+}
+undefined
+var mike = new Employee(1010,"Mike",3333);
+undefined
+typeof(mike);
+"object"
+mike;
+Employee {id: 1010, name: "Mike", salary: 3333}
+ram;
+{id: 1001, name: "Ram", balance: 8888}
+ram instanceof Customer;
+false
+mike instanceof Employee;
+true
+var e= Employee();
+undefined
+var e= Employee(1001, "WWW",6666);
+undefined
+e;
+undefined
+function show(){
+console.log("hfjkdshkf");
+}
+undefined
+var t = show();
+VM3384:2 hfjkdshkf
+undefined
+t;
+undefined
+typeof(t);
+"undefined"
+var t = new show();
+VM3384:2 hfjkdshkf
+undefined
+t;
+show {}
+mike;
+Employee {id: 1010, name: "Mike", salary: 3333}
+var nn = show();
+VM3384:2 hfjkdshkf
+undefined
+nn;
+undefined
+show;
+ƒ show(){
+console.log("hfjkdshkf");
+}
+function heavy(){
+var pr = new Promise((resolve,reject)=>{
+// Async Task
+setTimeout(()=>{
+console.log("I will call after 5 sec ");
+resolve(1000);
+},5000); // timeout close
+
+});
+return pr;
+} // heavy close
+undefined
+async function cube(num){
+var pr = new Promise((resolve, reject)=>{
+console.log("Cube Call ", num);
+	setTimeout(()=>{
+	resolve(num**3);    
+},5000);
+})	
+return pr;
+}
+Promise.all([cube(2), cube(3),cube(4)]).then(resultArr=>{
+var sum = 0;
+resultArr.forEach(r=>{
+	sum+=r;
+});
+console.log("SUm is ",sum);
+}).catch(e=>console.log("Error ",e));
+
+VM5558:3 Cube Call  2
+VM5558:3 Cube Call  3
+VM5558:3 Cube Call  4
+Promise {<pending>}
+VM5558:15 SUm is  99
+var t=1;
+async function cube(num){
+var pr = new Promise((resolve, reject)=>{
+console.log("Cube Call ", num);
+	setTimeout(()=>{
+t++;
+if(t==3){
+reject("FAILED T is Become "+t);
+}
+	resolve(num**3);    
+},5000);
+})	
+return pr;
+}
+Promise.all([cube(2), cube(3),cube(4)]).then(resultArr=>{
+var sum = 0;
+resultArr.forEach(r=>{
+	sum+=r;
+});
+console.log("SUm is ",sum);
+}).catch(e=>console.log("Error ",e));
+
+VM5820:4 Cube Call  2
+VM5820:4 Cube Call  3
+VM5820:4 Cube Call  4
+Promise {<pending>}
+VM5820:21 Error  FAILED T is Become 3
+function heavy(){
+var pr = new Promise((resolve,reject)=>{
+// Async Task
+setTimeout(()=>{
+console.log("I will call after 5 sec ");
+resolve(1000);
+},5000); // timeout close
+
+});
+return pr;
+} // heavy close
+undefined
+async function total(){
+return await cube(2) + await cube(3) + await cube(4);
+}
+undefined
+var r = total();
+r.then(data=>console.log("Sum is ",r)).catch(e=>console.log("Error ",e));
+VM5820:4 Cube Call  2
+Promise {<pending>}
+VM5820:4 Cube Call  3
+VM5820:4 Cube Call  4
+VM6572:2 Sum is  Promise {<resolved>: 99}
+async function total(){
+//return await cube(2) + await cube(3) + await cube(4);
+var w = await cube(2);
+var m = await cube(w);
+var pr = cube(2);
+pr.then(data=>{
+var pr2 = cube(data);
+})
+}
+undefined
