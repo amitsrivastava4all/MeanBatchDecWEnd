@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Question CRUD</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/design.css">
+    <script src="js/utils/commonutils.js"></script>
+    <script src="js/models/question.js"></script>
+    <script src="js/models/questionOperations.js"></script>
+    <script src="js/controllers/question.js"></script>
+</head>
+
+<body>
+    <div class='container'>
+        <h1 class='alert-info text-center'>Question CRUD</h1>
+        <div class='form-group'>
+            <label for="id">Question Id</label>
+            <label id="id" class='form-control'>
+        </div>
+        <div class='form-group'>
+            <label for="id"> Name</label>
+            <textarea id="name" placeholder="Type Question Here" class='form-control' rows="6" cols="20"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="">OptionA</label>
+            <input id="optionA" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="">OptionB</label>
+            <input id="optionB" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="">OptionC</label>
+            <input id="optionC" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="">OptionD</label>
+            <input id="optionD" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="">Right Ans</label>
+            <input id="rightAns" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="">Score</label>
+            <input min="1" max="5" id="score" type="range" class="form-control">
+        </div>
+        <div>
+            <button id="add" class='btn btn-primary mr-2'><i class="fas fa-plus-square"></i>&nbsp;Add</button>
+            <button id='delete' class='btn btn-danger mr-2'><i class="fas fa-trash-alt"></i> &nbsp;Delete</button>
+            <button class='btn btn-info mr-2'>Search</button>
+            <button id="sort" class='btn btn-success mr-2'>Sort</button>
+            <button class='btn btn-warning mr-2'>Save</button>
+            <button class='btn btn-danger mr-2'>Load</button>
+            <button class='btn btn-secondary mr-2'>Update</button>
+            <button class='btn btn-success mr-2'>Save to Server</button>
+            <button class='btn btn-danger'>Clear All</button>
+        </div>
+        <div id="sortDiv">
+            <label for="">Sort By</label>
+            <select id="sortby">
+                <option value="id">Id</option>
+                <option value="name">Name</option>
+                <option value="score">Score</option>
+            </select>
+            <input type="checkbox"> Asc/Desc
+        </div>
+        <h2>Total Records <span id="total"></span> Mark for Delete <span id="mark"></span> UnMark <span id="unmark"></span> </h2>
+        <table class='table table-bordered'>
+            <thead class='thead-dark'>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>OptionA</th>
+                    <th>OptionB</th>
+                    <th>OptionC</th>
+                    <th>OptionD</th>
+                    <th>Right Ans</th>
+                    <th>Score</th>
+                    <th>Operations</th>
+                </tr>
+            </thead>
+            <tbody id="questions">
+
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

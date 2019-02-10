@@ -1,0 +1,117 @@
+var arr = [10,20,30,40,89,20];
+undefined
+arr.pop();
+20
+arr;
+(5) [10, 20, 30, 40, 89]
+arr.pop();
+89
+arr.pop();
+40
+var arr = [10,20,30,40,89,20];
+undefined
+arr.splice(1,1)
+[20]
+var arr = [10,20,30,40,89,20];
+undefined
+arr.findIndex(y=>y==20);
+1
+arr;
+(6) [10, 20, 30, 40, 89, 20]
+arr = arr.filter(y=>y!=20);
+(4) [10, 30, 40, 89]
+arr.forEach(e=>console.log(e));
+VM855:1 10
+VM855:1 30
+VM855:1 40
+VM855:1 89
+undefined
+var arr = [10,20,30,40,89,20];
+undefined
+arr.sort((first,second)=>first-second);
+(6) [10, 20, 20, 30, 40, 89]
+arr;
+(6) [10, 20, 20, 30, 40, 89]
+arr.sort((first, second)=>second-first);
+(6) [89, 40, 30, 20, 20, 10]
+arr = ["amit","anil","ram","ajay"];
+(4) ["amit", "anil", "ram", "ajay"]
+"amit".localeCompare("anil");
+-1
+"anil".localeCompare("amit");
+1
+arr.sort((first,second)=>first.localeCompare(second));
+(4) ["ajay", "amit", "anil", "ram"]
+arr.sort((first,second)=>second.localeCompare(first));
+(4) ["ram", "anil", "amit", "ajay"]
+function initCount(){
+var counter = 1;
+function increaseCount(){
+	return counter++;
+}
+return increaseCount;
+}
+var fn = initCount();
+undefined
+fn;
+ƒ increaseCount(){
+	return counter++;
+}
+fn();
+1
+fn();
+2
+fn();
+3
+fn();
+4
+counter;
+VM5569:1 Uncaught ReferenceError: counter is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM5569:1
+initCount();
+ƒ increaseCount(){
+	return counter++;
+}
+var fn = initCount();
+undefined
+fn();
+1
+fn().counter;
+undefined
+const fn = initCount();
+VM5875:1 Uncaught SyntaxError: Identifier 'fn' has already been declared
+    at <anonymous>:1:1
+(anonymous) @ VM5875:1
+const fn1 = initCount();
+undefined
+fn2=9999;
+9999
+fn1=9999;
+VM5916:1 Uncaught TypeError: Assignment to constant variable.
+    at <anonymous>:1:4
+(anonymous) @ VM5916:1
+fn1
+ƒ increaseCount(){
+	return counter++;
+}
+fn1()
+1
+fn1()
+2
+fn1=initCount();
+VM5972:1 Uncaught TypeError: Assignment to constant variable.
+    at <anonymous>:1:4
+(anonymous) @ VM5972:1
+var f3 = initCount();
+undefined
+var a = 100;
+undefined
+function test()
+{
+let hh = 100
+if(10>2){
+let t = 100
+}
+}
+undefined

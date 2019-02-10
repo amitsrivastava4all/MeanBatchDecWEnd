@@ -1,0 +1,15 @@
+* {
+    font-family: 'Roboto Slab', serif;
+}
+
+.show {
+    display: block;
+}
+
+.hide {
+    display: none;
+}
+
+i {
+    cursor: pointer;
+}
