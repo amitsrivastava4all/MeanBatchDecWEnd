@@ -1,0 +1,21 @@
+{
+  "name": "moduleuse",
+  "version": "1.0.0",
+  "description": "this is a test module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "testapp"
+  ],
+  "author": "amit",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "computemodule": "^1.0.0"
+  },
+  "devDependencies": {
+    "karma": "^4.0.0"
+  }
+}

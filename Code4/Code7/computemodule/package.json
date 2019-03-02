@@ -1,0 +1,21 @@
+{
+    "name": "computemodule",
+    "version": "1.0.0",
+    "description": "this is a test module",
+    "main": "index.js",
+    "scripts": {
+        "prod": "node invoke.js",
+        "test": "node invoke.js",
+        "uat": "node invoke.js",
+        "devrelease": "node invoke.js",
+        "dev": "node invoke.js",
+        "start": "node invoke.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "test",
+        "module"
+    ],
+    "author": "amit",
+    "license": "MIT"
+}
