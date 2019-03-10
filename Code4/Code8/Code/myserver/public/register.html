@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function exist() {
+            var userid = document.querySelector('#userid').value;
+            //var pr = fetch('exist?uid='+userid); // GET
+            var pr = fetch('exist', {
+                method: 'POST',
+                body: JSON.stringify({
+                    uid: userid
+                })
+            });
+            pr.then(response => {
+                response.text().then(data => {
+                    document.querySelector('#result').innerText = data;
+                }).catch(err => {
+                    console.log('Error from Server');
+                }).catch(e => {
+                    console.log("not able to connect to the server");
+                })
+            })
+        }
+    </script>
+</head>
+
+<body>
+
+    <input id='userid' onchange="exist()" type="text" placeholder="Type Userid Here">
+    <span id='result'></span>
+</body>
+
+</html>
