@@ -1,0 +1,79 @@
+function Person(id, name){
+this.id = id;
+this.name = name;
+}
+function Emp (salary,bonus){
+this.salary = salary;
+this.bonus = bonus;
+}
+undefined
+Emp.prototype;
+{constructor: ƒ}constructor: ƒ Emp(salary,bonus)__proto__: Objectconstructor: ƒ Object()hasOwnProperty: ƒ hasOwnProperty()isPrototypeOf: ƒ isPrototypeOf()propertyIsEnumerable: ƒ propertyIsEnumerable()toLocaleString: ƒ toLocaleString()toString: ƒ toString()valueOf: ƒ valueOf()__defineGetter__: ƒ __defineGetter__()__defineSetter__: ƒ __defineSetter__()__lookupGetter__: ƒ __lookupGetter__()__lookupSetter__: ƒ __lookupSetter__()get __proto__: ƒ __proto__()set __proto__: ƒ __proto__()
+Emp.prototype.__proto__
+{constructor: ƒ, __defineGetter__: ƒ, __defineSetter__: ƒ, hasOwnProperty: ƒ, __lookupGetter__: ƒ, …}
+Emp.prototype.__proto__ = Person.prototype;
+{constructor: ƒ}
+Emp.prototype.__proto__;
+{constructor: ƒ}constructor: ƒ Person(id, name)__proto__: Object
+var ram = new Emp(9999,444);
+undefined
+ram;
+Emp {salary: 9999, bonus: 444}
+ram.id;
+undefined
+Person.prototype.print=function(){
+console.log(`Id is ${this.id} And NAme is ${this.name}`);
+}
+ƒ (){
+console.log(`Id is ${this.id} And NAme is ${this.name}`);
+}
+Person.prototype;
+{print: ƒ, constructor: ƒ}print: ƒ ()constructor: ƒ Person(id, name)__proto__: Object
+Emp.prototype;
+Person {constructor: ƒ}constructor: ƒ Emp(salary,bonus)__proto__: print: ƒ ()constructor: ƒ Person(id, name)__proto__: Object
+Emp.prototype.__proto__;
+{print: ƒ, constructor: ƒ}print: ƒ ()constructor: ƒ Person(id, name)__proto__: Object
+ram;
+Emp {salary: 9999, bonus: 444}
+ram.id =10001;
+10001
+ram.name = "Amit";
+"Amit"
+ram;
+Emp {salary: 9999, bonus: 444, id: 10001, name: "Amit"}
+ram.print();
+VM3580:2 Id is 10001 And NAme is Amit
+undefined
+ram;
+Emp {salary: 9999, bonus: 444, id: 10001, name: "Amit"}bonus: 444id: 10001name: "Amit"salary: 9999__proto__: Personconstructor: ƒ Emp(salary,bonus)__proto__: Object
+function add(a,b){
+	return a + b;
+}
+undefined
+add(100,200);
+300
+function Person(id, name){
+var obj = {};
+obj.id = id;
+obj.name = name;
+return obj;
+}
+
+undefined
+var t = Person(100, 'Ram');
+undefined
+t;
+{id: 100, name: "Ram"}
+function Person(id, name){
+//  var this = {};
+this.id = id;
+this.name = name;
+//return this;
+}
+
+undefined
+var tom = new Person(1, 'Tom');
+
+undefined
+tom;
+Person {id: 1, name: "Tom"}
