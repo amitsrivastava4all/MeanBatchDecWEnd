@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <style>
+        img {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class='container'>
+        <%- include partials/header.ejs %>
+            <h1>Dashboard Page Welcome
+                <%=uid%>
+            </h1>
+            <h1>Items are </h1>
+            <ul>
+                <% 
+                let className = '';
+        for(let item of items){
+            className = 'alert-danger';
+            if(item.price>9000){
+                className = 'alert-success';
+            }
+        %>
+                    <li class="<%=className%>">
+                        <%=item.id%>
+                            <%=item.name%>
+                                <%=item.price%>
+                                    <img src="<%=item.url%>">
+                    </li>
+                    <%
+    
+                }
+    %>
+            </ul>
+            <%- include partials/footer.ejs %>
+    </div>
+</body>
+
+</html>
