@@ -1,0 +1,20 @@
+{
+  "name": "public",
+  "authors": [
+    "amitsrivastava4all <amitsrivastava4all@gmail.com>"
+  ],
+  "description": "this is for client side",
+  "main": "",
+  "license": "MIT",
+  "homepage": "index.html",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^4.3.1"
+  }
+}

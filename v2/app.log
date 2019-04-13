@@ -1,0 +1,3 @@
+{"message":"Inside DoPost of UserAPI Register [object Object]","level":"debug"}
+{"message":"Inside UserCRUD Add [object Object]","level":"debug"}
+{"message":"Record Added Sending Response","level":"debug"}
