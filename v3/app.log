@@ -1,0 +1,17 @@
+{"message":"Inside DoPost of UserAPI Register [object Object]","level":"debug"}
+{"message":"Inside UserCRUD Add [object Object]","level":"debug"}
+{"message":"Record Added Sending Response","level":"debug"}
+{"message":"Inside DoPost of UserAPI Register [object Object]","level":"debug"}
+{"message":"Inside DoPost of UserAPI Register [object Object]","level":"debug"}
+{"message":"Inside DoPost of UserAPI Register [object Object]","level":"debug"}
+{"message":"Inside ProductCRUD Add {\"id\":1000,\"name\":\"Nokia\",\"price\":9000,\"url\":\"www.abcd.com\"}","level":"debug"}
+{"message":"Record Added Sending Response","level":"debug"}
+{"message":"Inside DoPost of UserAPI Register [object Object]","level":"debug"}
+{"message":"Inside ProductCRUD Add {\"id\":1002,\"name\":\"LG\",\"price\":3000,\"url\":\"www.abcd.com\"}","level":"debug"}
+{"message":"Record Added Sending Response","level":"debug"}
+{"message":"Inside DoPost of UserAPI Register [object Object]","level":"debug"}
+{"message":"Inside ProductCRUD Add {\"id\":1003,\"name\":\"Apple\",\"price\":33000,\"url\":\"www.abcd.com\"}","level":"debug"}
+{"message":"Record Added Sending Response","level":"debug"}
+{"message":"Inside DoPost of UserAPI Register [object Object]","level":"debug"}
+{"message":"Inside ProductCRUD Add {\"id\":1004,\"name\":\"One PLUS\",\"price\":20000,\"url\":\"www.abcd.com\"}","level":"debug"}
+{"message":"Record Added Sending Response","level":"debug"}
