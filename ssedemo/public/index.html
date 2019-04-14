@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.addEventListener("load", () => {
+            var event = new EventSource('http://localhost:1234/livescore');
+            event.addEventListener("letdoservertalk", (event) => {
+                console.log('Data is ', event);
+                document.querySelector('#result').innerText = event.data;
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <h1>Today Match Score is </h1>
+    <p id='result'></p>
+</body>
+
+</html>
