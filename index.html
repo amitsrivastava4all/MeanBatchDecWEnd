@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Angular First demo</title>
+    <style>
+    .red{
+        color:red;
+    }
+    .green{
+        color:green;
+    }
+    </style>
+    <script src="libs/angular.min.js"></script>
+</head>
+<body ng-app>
+    <ul ng-init="mobiles=['apple','samsung','nokia']">
+        <li ng-repeat="mobile in mobiles">
+            {{mobile}}
+        </li>
+    </ul>
+    <input ng-init="price=0" ng-model="price" type="text">
+    <input ng-init="qt=0" type="text"  ng-model="qt">
+    <br>
+   <p ng-class="{'red':(price*qt)<5000,'green':(price*qt)>=5000}"">Amount is {{price*qt|currency:'&#8377;'}}</p> 
+    <input type="checkbox" ng-init="tick=false" ng-model="tick">
+    Tick is {{tick}}
+    <div ng-show="tick">
+    <input ng-model="myname" type="text" placeholder="Type Your Name Here">
+    <br>
+    <p>Your Name is {{myname|uppercase}} </p>
+</div>
+</body>
+</html>
