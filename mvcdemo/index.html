@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="app.js"></script>
+    <script src="model.js"></script>
+    <script src="controller.js"></script>
+
+</head>
+<body ng-app="firstmodule">
+    <div ng-controller="calcctrl">
+            <input ng-model="first" type="text" placeholder="Type First Number">
+            <br>
+            <input ng-model="second" type="text" placeholder="Type Second Number">
+            <br>
+            <button ng-click="addition()">Add</button>
+            Sum is {{result}}
+    </div>
+</body>
+</html>
