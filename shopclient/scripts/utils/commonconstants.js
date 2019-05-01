@@ -1,0 +1,2 @@
+app.constant('FETCH_PRODUCT','https://raw.githubusercontent.com/amitsrivastava4all/serverdata/master/mobiles.json');
+app.constant('SEARCH_PRODUCT','https://raw.githubusercontent.com/amitsrivastava4all/serverdata/master/mobiles.json');
