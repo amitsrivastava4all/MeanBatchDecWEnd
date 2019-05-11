@@ -7,30 +7,25 @@
     <title>Shop App</title>
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
     <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-route/angular-route.min.js"></script>
     <script src="scripts/products/app.js"></script>
     <script src="scripts/utils/commonconstants.js"></script>
     <script src="scripts/products/models/productfactory.js"></script>
     <script src="scripts/products/controllers/productcontroller.js"></script>
+    <script src="scripts/orders/controller.js"></script>
+    <script src="scripts/products/single.js"></script>
+    <script src="scripts/route.js"></script>
 </head>
 <body ng-app ="productapp">
     <div class='container' ng-controller="productctrl">
-        <input class="form-control" type="text" ng-model="search" placeholder="Type to Search">
-        <select ng-model="sort">
-            <option value="">Select Sort By</option>
-            <option value="price">By Price</option>
-            <option value="name">By Name</option>
-        </select> 
-       <input type="checkbox" ng-model="order" > Asc/Desc Order
-        <h2 class='alert-success text-center'>Products</h2>
-            <div class='row' ng-repeat="product in products|filter:search|orderBy:sort:order">
-                <div class="col-sm-12">
-                    
-                    <img ng-src="{{product.url}}" alt="{{product.name}}">
-                    <p>Name is {{product.name|uppercase}} </p>
-                    <p>Price is {{product.price|currency}} </p>
-                    <p>Quantity is {{product.quantity}} </p>
-                </div>
-            </div>
+        <input type="text" placeholder="Type Product Id " ng-model="pid">
+            <a ng-href="#/">Home</a>
+        <a ng-href="#/products">Products</a>
+        <a ng-href="#/orders">Orders</a>
+        <a ng-href="#/inventory">Inventory</a>
+         <a ng-href="#/single/{{pid}}">Single Product</a> 
+        <ng-view></ng-view>
+       
     </div>
 </body>
 </html>

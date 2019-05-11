@@ -1,1 +1,1 @@
-const app = angular.module('productapp',[]);
+const app = angular.module('productapp',['ngRoute']);

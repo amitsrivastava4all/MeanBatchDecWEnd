@@ -1,0 +1,20 @@
+<div>
+<input class="form-control" type="text" ng-model="search" placeholder="Type to Search">
+<select ng-model="sort">
+    <option value="">Select Sort By</option>
+    <option value="price">By Price</option>
+    <option value="name">By Name</option>
+</select> 
+<input type="checkbox" ng-model="order" > Asc/Desc Order
+<h2 class='alert-success text-center'>Products</h2>
+<!-- {{products}} -->
+    <div class='row' ng-repeat="product in products|filter:search|orderBy:sort:order">
+        <div class="col-sm-12">
+            
+            <img ng-src="{{product.url}}" alt="{{product.name}}">
+            <p>Name is {{product.name|uppercase}} </p>
+            <p>Price is {{product.price|currency}} </p>
+            <p>Quantity is {{product.quantity}} </p>
+        </div>
+    </div>
+</div>

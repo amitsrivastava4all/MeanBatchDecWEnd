@@ -13,6 +13,7 @@
   ],
   "dependencies": {
     "angular": "^1.7.8",
-    "bootstrap": "^4.3.1"
+    "bootstrap": "^4.3.1",
+    "angular-route": "^1.7.8"
   }
 }
