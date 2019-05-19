@@ -4,33 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Angular First demo</title>
-    <style>
-    .red{
-        color:red;
-    }
-    .green{
-        color:green;
-    }
-    </style>
-    <script src="libs/angular.min.js"></script>
+    <title>Document</title>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script>
+    const app2 = angular.module("myapp2",[]);
+    app2.factory('myfactory',()=>{
+        return {
+            x:0
+        }
+    })
+    const app = angular.module("myapp",["myapp2"]);
+    app.config(function($interpolateProvider) {
+    $interpolateProvider.startSymbol('[[');
+    $interpolateProvider.endSymbol(']]');
+  });
+    // app.factory('myfactory',()=>{
+    //     return {
+    //         x:0
+    //     }
+    // })
+    app.controller("myctrl1",($scope, $rootScope,myfactory)=>{
+        $scope.name = '';
+        $scope.shareIt=()=>{
+                $rootScope.myname = $scope.name;
+                myfactory.x = 100;  // Push
+        }
+    })
+    app.controller("myctrl2",($scope)=>{
+        
+    })
+    app.controller("myctrl3",($scope)=>{
+        
+    })
+    app.controller("myctrl4",($scope,myfactory)=>{
+        $scope.fetchIt = ()=>{
+            $scope.xValue = myfactory.x;  // Pull
+        }
+    })
+    </script>
 </head>
-<body ng-app>
-    <ul ng-init="mobiles=['apple','samsung','nokia']">
-        <li ng-repeat="mobile in mobiles">
-            {{mobile}}
-        </li>
-    </ul>
-    <input ng-init="price=0" ng-model="price" type="text">
-    <input ng-init="qt=0" type="text"  ng-model="qt">
-    <br>
-   <p ng-class="{'red':(price*qt)<5000,'green':(price*qt)>=5000}"">Amount is {{price*qt|currency:'&#8377;'}}</p> 
-    <input type="checkbox" ng-init="tick=false" ng-model="tick">
-    Tick is {{tick}}
-    <div ng-show="tick">
-    <input ng-model="myname" type="text" placeholder="Type Your Name Here">
-    <br>
-    <p>Your Name is {{myname|uppercase}} </p>
-</div>
+<body ng-app="myapp">
+    <div ng-controller="myctrl1">
+        <input type="text" placeholder="Type Data Here" ng-model="name">
+        <button ng-click="shareIt()">Share to Sibling</button>
+       Parent Name is  [[name]]
+       <hr>
+        <div ng-controller="myctrl2">
+                Your Name in Child [[name]]
+        </div>
+    </div>
+    <div ng-controller="myctrl3">
+        <p>I am Sibling Not Child</p>
+        <p>[[myname]]</p>
+    </div>
+    <div ng-controller="myctrl4">
+            <p>Fetch from Factory I am Sibling Not Child</p>
+            <button ng-click="fetchIt()">Fetch</button>
+            <p>[[xValue]]</p>
+        </div>
 </body>
 </html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script>
+        const app = angular.module("myapp",[]);
+        app.controller("myctrl1",($scope)=>{
+            $scope.$on('sendP',(event,data)=>{
+                $scope.childData = data;
+            })
+            $scope.broadcastToAll= ()=>{
+                $scope.$broadcast('sendtoall',{'msg':$scope.txtData});
+            }
+        })
+        app.controller("myctrl2",($scope)=>{
+            $scope.$on('sendtoall',(event,recData)=>{
+                $scope.data = recData;
+            });
+})
+app.controller("myctrl3",($scope)=>{
+    $scope.sendToParent= ()=>{
+        $scope.$emit('sendP',{'message':$scope.name});
+    }
+})
+app.controller("myctrl4",($scope)=>{
+    $scope.$on('sendtoall',(event,recData)=>{
+                $scope.data = recData;
+            });
+})
+    </script>
+</head>
+<body ng-app="myapp">
+    <div ng-controller="myctrl1">
+        Rec Data From Child3 {{childData}}
+        <br>
+        <input type="text" ng-model="txtData" placeholder="Type to Broadcast">
+        <button ng-click="broadcastToAll()">BroadCast</button>
+        
+        <hr>
+        <div ng-controller="myctrl2">
+           CTRL2 {{data}}
+        </div>
+        <div ng-controller="myctrl3">
+            CTRL3
+            <input type="text" ng-model="name" placeholder="Send to Parent">
+            <button ng-click="sendToParent()">Send to Parent</button>
+        </div>
+        <div ng-controller="myctrl4">
+               CTRL4 {{data}}
+        </div>
+    </div>
+    
+</body>
+</html>

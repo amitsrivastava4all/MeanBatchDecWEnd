@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+    span{
+        color:red;
+    }
+    input.ng-invalid{
+        border-color: red;
+        border-width: 2px;
+    }
+    input.ng-valid{
+        border-color:green;
+        border-width: 2px;
+    }
+    </style>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script>
+    const app = angular.module("myapp",[]);
+    app.directive('tcsHeader',()=>{
+        return {
+            //template:'<p>This is Header tag</p>'
+            templateUrl:'./header.html',
+            restrict:'EA'
+        }
+    })
+    app.filter('goodwords',()=>{
+        const awords = ["xyz","abc","ttt"];
+        return (str)=>{
+            if(str && str.trim().length>=3){
+                return awords.indexOf(str)>=0?"@#%%*":str;
+            //return "@#%%*";
+            }
+            else
+            if(str && str.trim().length>0){
+                return str;
+            }
+            else
+            {
+                return '';
+            }
+        }
+    })
+    app.controller("ctrl",($scope)=>{
+        var menus = [{name:'Home',link:'#/abcd'},{name:'About',link:'#/about'},{name:'News',link:'#/news'}];
+        $scope.menus = menus;
+        $scope.msg = '';
+        $scope.flag = true;
+        $scope.register = (valid)=>{
+            if(valid){
+                $scope.msg = 'Form is Valid';
+                $scope.flag= false;
+            }
+            else{
+                $scope.msg = 'Form is Invalid Please check the fields';
+            }
+        }
+    })
+    </script>
+</head>
+<body ng-app="myapp">
+    <div ng-controller="ctrl">
+        <tcs-header></tcs-header>
+        <div tcs-header>
+
+        </div>
+        {{msg}}
+        <form ng-submit="register(f1.$valid)" name="f1" novalidate>
+            <input type="date">
+            <input type="text" ng-model="chatmsg" placeholder="Type to Send Message ">
+            {{chatmsg|goodwords}}
+            <br>
+        <input ng-change="register(f1.$valid)" name="customername" ng-model=
+        "customername" type="text" pattern="[a-zA-Z]{3,10}" required placeholder="Type Name Here">
+        <!-- {{f1.customername}}    -->
+        <span ng-if="f1.customername.$touched && f1.customername.$invalid && f1.customername.$error['required']">Name Can't Be Blank</span>
+        <span ng-if="f1.customername.$touched && f1.customername.$invalid && f1.customername.$error['pattern']">Name Must B/W 3 to 10 Chars</span>
+        <button ng-disabled="flag">Register</button>
+    </form>    
+    </div>
+    
+</body>
+</html>
