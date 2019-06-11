@@ -1,0 +1,1 @@
+const userModule = angular.module('usermodule',['app']);

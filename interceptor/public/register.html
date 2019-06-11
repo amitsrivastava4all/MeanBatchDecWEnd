@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login </title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="js/user/usermodule.js"></script>
+    <script src="js/user/userconfig.js"></script>
+    <script src="js/user/factories/userfactory.js"></script>
+    <script src="js/user/controllers/usercontroller.js"></script>
+</head>
+
+<body ng-app="usermodule">
+
+    <div class='container' ng-controller="userctrl">
+        <h1>{{data.data.message}}</h1>
+        <p>{{err}}</p>
+        <h2 class='alert-info text-center'>Register Form</h2>
+        <div class='form-group'>
+            <label for="">Userid</label>
+            <input ng-model='user.userid' autocomplete="off" autofocus type="text" class='form-control' placeholder="Type Userid Here">
+
+        </div>
+        <div class='form-group'>
+            <label for="">Password</label>
+            <input ng-model='user.password' class='form-control' type="password" placeholder="Type Password Here">
+
+        </div>
+        <div class='form-group'>
+            <button ng-click="doRegister()" class='btn btn-primary mr-2'>Register</button><button class='btn btn-danger'>Reset</button>
+
+        </div>
+    </div>
+</body>
+
+</html>
