@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Angular JS File Upload Demo</title>
+    <style>
+    img{
+        width:100px;
+        height:100px;
+    }
+    </style>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/ng-file-upload/ng-file-upload-shim.min.js"></script>
+    <script src="bower_components/ng-file-upload/ng-file-upload.min.js"></script>
+    <script src="scripts/app.js"></script>
+    <script src="scripts/factory.js"></script>
+    <script src="scripts/controller.js"></script>
+</head>
+<body ng-app="myapp">
+    <div ng-controller="myctrl">
+            <h2>{{msg}}</h2>
+            <form   name="form">
+                <label for="">Choose File to Upload</label>
+                
+                          
+                   <input type="file" ngf-select ng-model="file" 
+                   name="file" accept="image/*" ngf-max-size="2MB">
+                    <button  ng-click="submit(file)">submit</button>
+                  </form>
+                  Files are {{file}}
+                  <img ngf-thumbnail="file">
+
+    </div>
+    
+</body>
+</html>
