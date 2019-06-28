@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script>
+    const upload = angular.module('myapp',[]);
+    upload.controller('userCtrl', ['$scope', '$http', function ($scope, $http) {
+ $scope.upload = function(){
+ 
+  var fd = new FormData();
+  var files = document.getElementById('file').files[0];
+  fd.append('file',files);
+
+  // AJAX request
+  $http({
+   method: 'post',
+   url: 'upload',
+   data: fd,
+   headers: {'Content-Type': undefined},
+  }).then(function successCallback(response) { 
+    // Store response data
+    $scope.response = response.data;
+  });
+ }
+ 
+}]);
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <body ng-app='myapp'>
+
+        <div ng-controller="userCtrl">
+         <input type="text" placeholder="Type Name Here" ng-model="name">
+         <br>
+         Name is {{name}}
+         <input type='file' name='file' id='file'><br/>
+         <input type='button' value='Upload' id='upload' ng-click='upload()' >
+         
+         <p>{{ response }}</p>
+        </div>
+       
+       </body>
+</body>
+</html>
