@@ -1,0 +1,338 @@
+function add(x,y){
+return x + y;
+}
+undefined
+add(10,20);
+30
+// Arrow Function ES6
+var add = (x,y)=>x+y;
+undefined
+add(1000,2000);
+3000
+var q = 100;
+undefined
+add(q,99);
+199
+function countDown(){
+var counter= 0;
+counter++;
+return counter;
+
+}
+countDown();
+countDown();
+1
+countDown();
+1
+countDown();
+1
+countDown();
+1
+countDown();
+1
+var counter= 0; // Global Var
+function countDown(){
+
+counter++;
+return counter;
+
+}
+countDown();
+
+1
+counter;
+1
+countDown();
+2
+countDown();
+3
+countDown();
+4
+countDown();
+5
+countDown();
+6
+counter = "Amit";
+"Amit"
+"one"++
+VM883:1 Uncaught ReferenceError: Invalid left-hand side expression in postfix operation
+var t = "one":
+VM926:1 Uncaught SyntaxError: Unexpected token :
+var t = "one";
+undefined
+t++;
+NaN
+function init(){
+var count = 0; // Local
+function countDown(){ // Nested function
+count++;
+return count;
+}
+return countDown;
+}
+undefined
+var x = init();  // x has countDown
+undefined
+x;
+ƒ countDown(){ // Nested function
+count++;
+return count;
+}
+x;
+ƒ countDown(){ // Nested function
+count++;
+return count;
+}
+x();
+1
+x();
+2
+x();
+3
+x();
+4
+x();
+5
+x();
+6
+count;
+VM1326:1 Uncaught ReferenceError: count is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM1326:1
+function Math(){
+var x=10 , y=20 ,z = 100;
+function add(){
+y = y + z;
+return x + y;
+}
+function sin(){
+return x;
+}
+function cos(){
+return y;
+}
+return [add, sin, cos];
+
+}
+
+undefined
+var t = Math();
+undefined
+t;
+(3) [ƒ, ƒ, ƒ]0: ƒ add()1: ƒ sin()2: ƒ cos()length: 3__proto__: Array(0)
+t[0];
+ƒ add(){
+y = y + z;
+return x + y;
+}
+t[0]();
+130
+z;
+VM1647:1 Uncaught ReferenceError: z is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM1647:1
+function init(){
+var count = 0; // Local
+function countDown(){ // Nested function
+count++;
+return count;
+}
+return countDown;
+}
+undefined
+var t = init();
+undefined
+t;
+ƒ countDown(){ // Nested function
+count++;
+return count;
+}
+t();
+1
+t();
+2
+t();
+3
+t();
+4
+t();
+5
+t = init();
+ƒ countDown(){ // Nested function
+count++;
+return count;
+}
+t();
+1
+t();
+2
+t();
+3
+t = init();
+ƒ countDown(){ // Nested function
+count++;
+return count;
+}
+t();
+1
+t();
+2
+var t= (function (){
+var count = 0; // Local
+function countDown(){ // Nested function
+count++;
+return count;
+}
+return countDown;
+})()
+undefined
+t();
+1
+t();
+2
+t();
+3
+t();
+4
+t;
+ƒ countDown(){ // Nested function
+count++;
+return count;
+}
+var m = t;
+undefined
+m;
+ƒ countDown(){ // Nested function
+count++;
+return count;
+}
+function* otp(){
+yield 1111;
+yield 3333;
+yield 5555;
+yield 7777;
+yield 5454;
+}
+undefined
+var t = otp();
+undefined
+t.next();
+{value: 1111, done: false}
+t.next();
+{value: 3333, done: false}
+t.next();
+{value: 5555, done: false}
+t.next();
+{value: 7777, done: false}
+t.next();
+{value: 5454, done: false}
+t.next();
+{value: undefined, done: true}
+function* countDown(){
+var c = 1;
+while(true){
+yield c;
+c++;
+}
+}
+undefined
+var t = countDown();
+undefined
+t.next();
+{value: 1, done: false}
+t.next();
+{value: 2, done: false}
+t.next();
+{value: 3, done: false}
+t.next();
+{value: 4, done: false}
+t.next();
+{value: 5, done: false}
+t.next();
+{value: 6, done: false}
+t.next();
+{value: 7, done: false}
+t.next();
+{value: 8, done: false}
+var add = (x,y)=>x+y;
+undefined
+function loop(fn){
+for(let i = 1; i<=10; i++){
+var result = fn(i,i); // Call Later
+console.log('Result is ',result); 
+}
+}
+loop(add);  // Pass Early
+VM2978:4 Result is  2
+VM2978:4 Result is  4
+VM2978:4 Result is  6
+VM2978:4 Result is  8
+VM2978:4 Result is  10
+VM2978:4 Result is  12
+VM2978:4 Result is  14
+VM2978:4 Result is  16
+VM2978:4 Result is  18
+VM2978:4 Result is  20
+undefined
+var cube = (num)=>num**3
+undefined
+loop(cube);
+VM2978:4 Result is  1
+VM2978:4 Result is  8
+VM2978:4 Result is  27
+VM2978:4 Result is  64
+VM2978:4 Result is  125
+VM2978:4 Result is  216
+VM2978:4 Result is  343
+VM2978:4 Result is  512
+VM2978:4 Result is  729
+VM2978:4 Result is  1000
+undefined
+loop((num)=>num**3);
+VM2978:4 Result is  1
+VM2978:4 Result is  8
+VM2978:4 Result is  27
+VM2978:4 Result is  64
+VM2978:4 Result is  125
+VM2978:4 Result is  216
+VM2978:4 Result is  343
+VM2978:4 Result is  512
+VM2978:4 Result is  729
+VM2978:4 Result is  1000
+undefined
+var add = (x,y)=>x+y;
+undefined
+loop(add);
+VM2978:4 Result is  2
+VM2978:4 Result is  4
+VM2978:4 Result is  6
+VM2978:4 Result is  8
+VM2978:4 Result is  10
+VM2978:4 Result is  12
+VM2978:4 Result is  14
+VM2978:4 Result is  16
+VM2978:4 Result is  18
+VM2978:4 Result is  20
+undefined
+loop((x,y)=>x-y);
+VM2978:4 Result is  0
+VM2978:4 Result is  0
+VM2978:4 Result is  0
+VM2978:4 Result is  0
+VM2978:4 Result is  0
+VM2978:4 Result is  0
+VM2978:4 Result is  0
+VM2978:4 Result is  0
+VM2978:4 Result is  0
+VM2978:4 Result is  0
+undefined
+cube(3);
+27
+cube(3,10,20,90,100);
+27
+cube(2,10,20,90,100);
+8
+var a =10;
+undefined
+a;
+10
