@@ -16,6 +16,6 @@
     "computemodule": "^1.0.0"
   },
   "devDependencies": {
-    "karma": "^4.0.0"
+    "karma": "^6.4.1"
   }
 }
